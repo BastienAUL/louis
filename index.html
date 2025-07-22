@@ -1,47 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Hecaking</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>HECAKING</title>
+  <style>
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1000;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    #popup button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <video autoplay muted loop id="myVideo">
-    <source src="penta.mp4" type="video/mp4">
-    </video>
-    <audio id="son" src="son.mp3" autoplay></audio>
-    <button onclick="toggleSon()" class="pause"><img id="img" src="play.png" alt=""></button>
-    <div class="card">
-    <div class="banner">
-            <img src="https://i.pinimg.com/originals/c4/db/a5/c4dba58695a5f02516498036e79fd1a3.gif" id="banner">
-        </div>
-        <div class="logo">
-            <img src="https://i.pinimg.com/736x/bd/5e/37/bd5e371e175a659f72f5912f7ca44f53.jpg" id="logo">
-        </div>
-        <h1 id="name">HECAKING</h1>
-        <h2 id="drapeau">FRANCE</h2>
-        <h2 id="bio">100k de coffret a 17 ans..</h2>
-        
-        <div id="social">
-            <button class="social"><img src="https://img.icons8.com/win10/512/FFFFFF/instagram-new.png"></button>
-            <a href="https://op.gg/lol/summoners/euw/hecaking-heca"><button class="social"><img src="https://pbs.twimg.com/profile_images/1760042107828330496/8BtU7QG3_400x400.png"></button></a>
-            <button class="social"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png"></button>
-        </div>
-    </div>
-    <script>
-    function toggleSon() {
-      const audio = document.getElementById("son");
-      const img = document.getElementById("img");
 
+  <div id="popup">
+    <h1>Clique ?</h1>
+    <button onclick="fermerPopup()">ENTRER</button>
+  </div>
+
+  <video autoplay muted loop id="myVideo">
+    <source src="penta.mp4" type="video/mp4">
+  </video>
+
+  <audio id="son" src="son.mp3"></audio>
+
+  <button onclick="toggleSon()" class="pause">
+    <img id="img" src="play.png" alt="">
+  </button>
+
+  <div class="card">
+    <div class="banner">
+      <img src="https://i.pinimg.com/originals/c4/db/a5/c4dba58695a5f02516498036e79fd1a3.gif" id="banner">
+    </div>
+    <div class="logo">
+      <img src="https://i.pinimg.com/736x/bd/5e/37/bd5e371e175a659f72f5912f7ca44f53.jpg" id="logo">
+    </div>
+    <h1 id="name">HECAKING</h1>
+    <h2 id="drapeau">FRANCE</h2>
+    <h2 id="bio">100k de coffret à 17 ans..</h2>
+
+    <div id="social">
+      <button class="social"><img src="https://img.icons8.com/win10/512/FFFFFF/instagram-new.png"></button>
+      <a href="https://op.gg/lol/summoners/euw/hecaking-heca">
+        <button class="social"><img src="https://pbs.twimg.com/profile_images/1760042107828330496/8BtU7QG3_400x400.png"></button>
+      </a>
+      <button class="social"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png"></button>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById("son");
+    const img = document.getElementById("img");
+    const popup = document.getElementById("popup");
+
+    function fermerPopup() {
+      popup.style.display = "none";
+      audio.play().then(() => {
+        img.src = "pause.png";
+      }).catch(err => console.log("Erreur audio :", err));
+    }
+
+    function toggleSon() {
       if (audio.paused) {
         audio.play();
-        img.src = "play.png";
+        img.src = "pause.png";
       } else {
         audio.pause();
-        img.src = "pause.png";
+        img.src = "play.png";
       }
     }
-    </script>
+  </script>
+
 </body>
 </html>
