@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: Roboto;
+}
+
+body{
+    background-image: "penta.mp4";
+    color: white;
+}
+
+.card{
+    width: 400px;
+    border: 1px solid red;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#banner{
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+    background-color: aliceblue;
+}
+
+#logo{
+    background-color: red;
+    border: 1.5px solid black;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    margin: auto;
+    position: absolute;
+	top: 37%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#name{
+    margin-top: 80px;
+}
+
+#drapeau{
+    font-weight: 500;
+    font-size: 13px;
+}
+
+#bio{
+    font-weight: 300;
+    font-size: 19px;
+}
+
+.social{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background: transparent;
+    border: transparent;
+    border-radius: 100%;
+}
+
+img{
+    width: 30px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.pause{
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgb(255, 255, 255);
+    position: absolute;
+    border-radius: 100%;
+    transition: 1s;
+}
+
+.pause:hover{
+    background-color: rgba(104, 104, 104, 0.8);
+    border: 1px solid rgb(0, 0, 0);
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+    <source src="penta.mp4" type="video/mp4">
+    </video>
+    <audio id="son" src="son.mp3" autoplay></audio>
+    <button onclick="toggleSon()" class="pause"><img id="img" src="pause.png" alt=""></button>
+    <div class="card">
+    <div class="banner">
+            <img src="https://i.pinimg.com/originals/c4/db/a5/c4dba58695a5f02516498036e79fd1a3.gif" id="banner">
+        </div>
+        <div class="logo">
+            <img src="https://i.pinimg.com/736x/bd/5e/37/bd5e371e175a659f72f5912f7ca44f53.jpg" id="logo">
+        </div>
+        <h1 id="name">HECAKING</h1>
+        <h2 id="drapeau">FRANCE</h2>
+        <h2 id="bio">100k de coffret a 17 ans..</h2>
+        
+        <div id="social">
+            <button class="social"><img src="https://img.icons8.com/win10/512/FFFFFF/instagram-new.png"></button>
+            <a href="https://op.gg/lol/summoners/euw/hecaking-heca"><button class="social"><img src="https://pbs.twimg.com/profile_images/1760042107828330496/8BtU7QG3_400x400.png"></button></a>
+            <button class="social"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png"></button>
+        </div>
+    </div>
+    <script>
+    function toggleSon() {
+      const audio = document.getElementById("son");
+      const img = document.getElementById("img");
+
+      if (audio.paused) {
+        audio.play();
+        img.src = "play.png";
+      } else {
+        audio.pause();
+        img.src = "pause.png";
+      }
+    }
+    </script>
+</body>
+</html>
